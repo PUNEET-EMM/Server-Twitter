@@ -7,7 +7,7 @@
     "start": "node build/index",
     "build": "tsc -p .",
    
-    "dev": "npx prisma migrate deploy && tsc-watch --onSuccess \"npm start\""
+    "dev": "tsc-watch --onSuccess \"npm start\""
 
   },
   "devDependencies": {
