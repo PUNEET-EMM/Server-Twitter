@@ -8,8 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = require("./app");
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield (0, app_1.initServer)();
@@ -20,4 +25,3 @@ function init() {
     });
 }
 init();
-// "dev": "npx prisma migrate deploy && tsc-watch --onSuccess \"npm start\""

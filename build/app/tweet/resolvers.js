@@ -19,8 +19,7 @@ const user_1 = __importDefault(require("../../services/user"));
 const tweet_1 = __importDefault(require("../../services/tweet"));
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID || '';
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY || '';
-const region = process.env.AWS_DEFAULT_REGION || '';
-// Create an S3 client instance with AWS credentials
+const region = process.env.AWS_DEFAULT_REGION || " ";
 const s3Client = new client_s3_1.S3Client({
     region: region,
     credentials: {

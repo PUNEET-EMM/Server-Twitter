@@ -6,9 +6,11 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import UserService from "../../services/user";
 import TweetService, { CreateTweetPayload } from "../../services/tweet";
 
+
+
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID || '';
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY || '';
-const region = process.env.AWS_DEFAULT_REGION||'';
+const region = process.env.AWS_DEFAULT_REGION || " ";
 
 
 
@@ -18,12 +20,12 @@ interface CreateTweetData {
     imageUrl? :string
   }
 
-// Create an S3 client instance with AWS credentials
 const s3Client = new S3Client({
    region:region,
     credentials: {
       accessKeyId: accessKeyId,
       secretAccessKey: secretAccessKey
+      
     }
   });
  
@@ -46,6 +48,7 @@ const s3Client = new S3Client({
 
     }
 }
+
 
   const mutations ={
     createTweet: async(
